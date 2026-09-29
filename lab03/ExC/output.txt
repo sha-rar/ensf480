@@ -1,0 +1,84 @@
+
+Creating and testing Customers LookupTable <int, Customer> .....
+
+Printing table after inserting 3 new keys and 1 removal...
+8001  Nmae: Jack Lewis. Address: 12 St. Calgary.. Phone:: (403)-1111-123334
+8002  Nmae: Joe Morrison. Address: 11 St. Calgary.. Phone:: (403)-1111-123333
+
+Let's look up some names ...
+
+Found key:8001  Nmae: Jack Lewis. Address: 12 St. Calgary.. Phone:: (403)-1111-123334
+Sorry, I couldn't find key: 8000 in the table.
+
+Testing and using iterator ...
+
+The first node contains: Nmae: Jack Lewis. Address: 12 St. Calgary.. Phone:: (403)-1111-123334
+Nmae: Jack Lewis. Address: 12 St. Calgary.. Phone:: (403)-1111-123334
+Nmae: Joe Morrison. Address: 11 St. Calgary.. Phone:: (403)-1111-123333
+
+Test copying: keys should be 8001, and 8002
+8001  Nmae: Jack Lewis. Address: 12 St. Calgary.. Phone:: (403)-1111-123334
+8002  Nmae: Joe Morrison. Address: 11 St. Calgary.. Phone:: (403)-1111-123333
+
+Test assignment operator: key should be 8001
+8001  Nmae: Jack Lewis. Address: 12 St. Calgary.. Phone:: (403)-1111-123334
+
+Printing table for the last time: Table should be empty...
+  Table is EMPTY.
+***----Finished tests on LookupTable <int, Customer>-----***
+
+Creating and testing LookupTable <int, Mystring> .....
+
+Printing table after inserting 3 new keys and 1 removal...
+8001  C++ is a powerful language for engineers but it's not easy.
+8002  I am an ENEL-409 student.
+
+Let's look up some names ...
+
+Found key:8001  C++ is a powerful language for engineers but it's not easy.
+Sorry, I couldn't find key: 8000 in the table.
+
+The first node contains: C++ is a powerful language for engineers but it's not easy.
+C++ is a powerful language for engineers but it's not easy.
+I am an ENEL-409 student.
+
+Test copying: keys should be 8001, and 8002
+8001  C++ is a powerful language for engineers but it's not easy.
+8002  I am an ENEL-409 student.
+
+Test assignment operator: key should be 8001
+8001  C++ is a powerful language for engineers but it's not easy.
+
+Printing table for the last time: Table should be empty ...
+  Table is EMPTY.
+***----Finished Lab 3 tests on <int, Mystring>-----***
+
+Creating and testing LookupTable <int, int> .....
+
+Printing table after inserting 3 new keys and 1 removal...
+8001  8888
+8002  9999
+
+Let's look up some names ...
+
+Found key:8001  8888
+Sorry, I couldn't find key: 8000 in the table.
+
+The first node contains: 8888
+8888
+9999
+
+Test copying: keys should be 8001, and 8002
+8001  8888
+8002  9999
+
+Test assignment operator: key should be 8001
+8001  8888
+
+Printing table for the last time: Table should be empty ...
+  Table is EMPTY.
+***----Finished Lab 3 tests on <int, int>-----***
+
+
+Program terminated successfully.
+

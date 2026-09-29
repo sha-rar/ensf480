@@ -1,0 +1,176 @@
+Lab 3 - GraphicsWorld
+Author: Sharar
+
+Testing Functions in class Point:
+Expected to display the distance between m and n is: 3
+The distance between m and n is: 3
+Expected second version of the distance function also print: 3
+The distance between m and n is again: 3
+
+Testing Functions in class Square:
+Square Name: SQUARE - S
+X-coordinate: 5
+Y-coordinate: 7
+Side a: 12
+Area: 144
+Perimeter: 48
+
+Testing Functions in class Rectangle:
+Rectangle Name: RECTANGLE A
+X-coordinate: 5
+Y-coordinate: 7
+Side a: 12
+Side b: 15
+Area: 180
+Perimeter: 54
+Rectangle Name: RECTANGLE B
+X-coordinate: 16
+Y-coordinate: 7
+Side a: 8
+Side b: 9
+Area: 72
+Perimeter: 34
+
+Distance between rectangle a and b is: 11
+Rectangle Name: RECTANGLE A
+X-coordinate: 5
+Y-coordinate: 7
+Side a: 12
+Side b: 15
+Area: 180
+Perimeter: 54
+
+Testing assignment operator in class Rectangle:
+Rectangle Name: RECTANGLE rec2
+X-coordinate: 3
+Y-coordinate: 4
+Side a: 11
+Side b: 7
+Area: 77
+Perimeter: 36
+
+Expected to display the following values for object rec2: 
+Rectangle Name: RECTANGLE A
+X-coordinate: 5
+Y-coordinate: 7
+Side a: 12
+Side b: 15
+Area: 180
+Perimeter: 54
+
+If it doesn't there is a problem with your assignment operator.
+
+Rectangle Name: RECTANGLE A
+X-coordinate: 5
+Y-coordinate: 7
+Side a: 12
+Side b: 15
+Area: 180
+Perimeter: 54
+
+Testing copy constructor in class Rectangle:
+Rectangle Name: RECTANGLE A
+X-coordinate: 5
+Y-coordinate: 7
+Side a: 100
+Side b: 200
+Area: 20000
+Perimeter: 600
+
+Expected to display the following values for object rec3: 
+Rectangle Name: RECTANGLE A
+X-coordinate: 5
+Y-coordinate: 7
+Side a: 100
+Side b: 200
+Area: 20000
+Perimeter: 600
+
+If it doesn't there is a problem with your copy constructor.
+
+Rectangle Name: RECTANGLE A
+X-coordinate: 5
+Y-coordinate: 7
+Side a: 100
+Side b: 200
+Area: 20000
+Perimeter: 600
+
+Testing Functions in class Circle:
+Circle Name: CIRCLE C
+X-coordinate: 3
+Y-coordinate: 5
+Radius: 9
+Area: 254.469
+Perimeter: 56.5487
+The area of CIRCLE C is: 254.469
+The perimeter of CIRCLE C is: 56.5487
+The distance between rectangle a and circle c is: 2.82843
+
+Testing Functions in class CurveCut:
+CurveCut Name: CurveCut rc
+X-coordinate: 6
+Y-coordinate: 5
+Width: 10
+Length: 12
+Radius of the cut: 9
+The area of CurveCut rc is: 56.3827
+The perimeter of CurveCut rc is: 40.1372
+The distance between rc and c is: 3
+
+Testing array of Shape pointers and polymorphism:
+Square Name: SQUARE - S
+X-coordinate: 5
+Y-coordinate: 7
+Side a: 12
+Area: 144
+Perimeter: 48
+The area of SQUARE - S is: 144
+The perimeter of SQUARE - S is: 48
+Rectangle Name: RECTANGLE A
+X-coordinate: 5
+Y-coordinate: 7
+Side a: 400
+Side b: 300
+Area: 120000
+Perimeter: 1400
+The area of RECTANGLE A is: 120000
+The perimeter of RECTANGLE A is: 1400
+Circle Name: CIRCLE C
+X-coordinate: 3
+Y-coordinate: 5
+Radius: 9
+Area: 254.469
+Perimeter: 56.5487
+The area of CIRCLE C is: 254.469
+The perimeter of CIRCLE C is: 56.5487
+CurveCut Name: CurveCut rc
+X-coordinate: 6
+Y-coordinate: 5
+Width: 10
+Length: 12
+Radius of the cut: 9
+The area of CurveCut rc is: 56.3827
+The perimeter of CurveCut rc is: 40.1372
+
+Testing copy constructor in class CurveCut:
+CurveCut Name: CurveCut rc
+X-coordinate: 6
+Y-coordinate: 5
+Width: 10
+Length: 12
+Radius of the cut: 9
+
+Testing assignment operator in class CurveCut:
+CurveCut Name: CurveCut cc2
+X-coordinate: 2
+Y-coordinate: 5
+Width: 100
+Length: 12
+Radius of the cut: 9
+CurveCut Name: CurveCut rc
+X-coordinate: 6
+Y-coordinate: 5
+Width: 10
+Length: 12
+Radius of the cut: 9

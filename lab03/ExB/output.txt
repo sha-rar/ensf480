@@ -1,0 +1,55 @@
+
+
+The first element of vector x contains: 999
+Testing an <int> Vector: 
+
+
+Testing sort
+-77
+88
+999
+
+Testing Prefix --:
+999
+88
+-77
+
+Testing Prefix ++:
+88
+999
+-77
+
+Testing Postfix --
+-77
+999
+88
+Testing a <Mystring> Vector: 
+
+
+Testing sort
+All
+Bar
+Foo
+
+Testing Prefix --:
+Foo
+Bar
+All
+
+Testing Prefix ++:
+Bar
+Foo
+All
+
+Testing Postfix --
+All
+Foo
+Bar
+Testing a <char *> Vector: 
+
+
+Testing sort
+Apple
+Orange
+Pear
+Program Terminated Successfully.
