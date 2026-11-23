@@ -1,2 +1,2 @@
-# local history
-.history/
+*.class
+out/
