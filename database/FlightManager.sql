@@ -16,7 +16,7 @@ VALUES
 
 -- INCLUDES EXTRA USER INFO
 DROP TABLE IF EXISTS USER_INFO;
-CREATE TABLE USER_CREDENTIALS (
+CREATE TABLE USER_INFO (
   UserName      varchar(30) not null,
   PassWord      varchar(60) not null,     -- ideally stored as hash, real password never stored anywhere; not necessary for this demo
   Role          varchar(30) not null,
