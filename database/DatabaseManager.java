@@ -1,6 +1,5 @@
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 // Singleton
 // Only one instance of DatabaseManager per FlightManager instance
@@ -141,11 +140,37 @@ public final class DatabaseManager {
         
         myStmt.setString(1, userName);
         myStmt.setString(2, passWord);
-        myStmt.setString(3, userName);
-        myStmt.setString(1, userName);
-        myStmt.setString(1, userName);
-        myStmt.setString(1, userName);
+        myStmt.setString(3, userRole);
+        myStmt.setString(4, realName);
+        myStmt.setString(5, phoneNumber);
+        myStmt.setString(6, address);
+        myStmt.executeUpdate();
+        myStmt.close();
+      }catch (SQLException ex) {
+        ex.printStackTrace();
       }
     }
 
+  // Returns the role ("Member", "Administrator", "Guest") if valid, or null if invalid
+  public String validateLogin(String userName, String passWord) {
+    try {
+      String query = "SELECT Role FROM USER_INFO WHERE UserName = ? AND PassWord = ?";
+      PreparedStatement myStmt = dbConnect.prepareStatement(query);
+      myStmt.setString(1, userName);
+      myStmt.setString(2, passWord);
+
+      ResultSet rs = myStmt.executeQuery();
+
+      if (rs.next()) {
+          String role = rs.getString("Role");
+          myStmt.close();
+          return role; // login success, return the role
+      }
+      myStmt.close();
+
+    }catch (SQLException ex) {
+      ex.printStackTrace();
+    }
+    return null; // login failed
+  }
 }

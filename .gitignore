@@ -1,5 +1,6 @@
 # Java compiled files
 *.class
+*.iml
 
 # Temporary local test programs
 /src/TestAllPanels.java

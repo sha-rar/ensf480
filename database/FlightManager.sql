@@ -1,5 +1,11 @@
 DROP DATABASE IF EXISTS FLIGHTMANAGER;
 CREATE DATABASE FLIGHTMANAGER;
+
+-- App login used by DatabaseManager.java (run this script as root once)
+CREATE USER IF NOT EXISTS 'user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON FLIGHTMANAGER.* TO 'user'@'localhost';
+FLUSH PRIVILEGES;
+
 USE FLIGHTMANAGER;
 
 DROP TABLE IF EXISTS USER_ROLES;
@@ -16,7 +22,7 @@ VALUES
 
 -- INCLUDES EXTRA USER INFO
 DROP TABLE IF EXISTS USER_INFO;
-CREATE TABLE USER_CREDENTIALS (
+CREATE TABLE USER_INFO (
   UserName      varchar(30) not null,
   PassWord      varchar(60) not null,     -- ideally stored as hash, real password never stored anywhere; not necessary for this demo
   Role          varchar(30) not null,

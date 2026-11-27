@@ -1,4 +1,7 @@
 # ENSF 480 — Term Project (Group 23)
+## How to Run the project
+javac -d bin -cp lib/mysql-connector-j-26.10.0.jar src/*.java database/*.java
+java -cp "bin;lib/mysql-connector-j-26.10.0.jar" Main
 
 ## Group Members
 * Paolo Abad ( | paolo.abad@ucalgary.ca)
