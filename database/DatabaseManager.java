@@ -11,14 +11,14 @@ public final class DatabaseManager {
   public final String PASSWORD;
 
   private Connection dbConnect;
-  private ResultSet results;    // don't need to keep redeclaring for results.
+  private ResultSet results; // don't need to keep redeclaring for results.
 
-  private static DatabaseManager onlyInstance; 
+  private static DatabaseManager onlyInstance;
 
   private DatabaseManager() {
-    
-    this.DBURL = "jdbc:mysql://localhost/FlightManager";
-    this.USERNAME = "user";
+
+    this.DBURL = "jdbc:mysql://localhost:3306/FLIGHTMANAGER";
+    this.USERNAME = "root";
     this.PASSWORD = "password";
   }
 
@@ -130,49 +130,53 @@ public final class DatabaseManager {
   }
 
   public void insertNewUser(
-    String userName, String passWord, String userRole, 
-    String realName, String phoneNumber, String address) {
-      
-      try {
-        // INFO VALIDATION CALL ON THIS LINE
+      String userName, String passWord, String userRole,
+      String realName, String phoneNumber, String address) {
 
-        String query = "INSERT INTO USER_INFO (UserName, PassWord, Role, Name, Phone, Address) VALUES (?, ?, ?, ?, ?, ?)";
-        PreparedStatement myStmt = dbConnect.prepareStatement(query);
-        
-        myStmt.setString(1, userName);
-        myStmt.setString(2, passWord);
-        myStmt.setString(3, userRole);
-        myStmt.setString(4, realName);
-        myStmt.setString(5, phoneNumber);
-        myStmt.setString(6, address);
-        myStmt.execute();
-      } catch (SQLException ex) {
-        ex.printStackTrace();
-      }
+    try {
+      // INFO VALIDATION CALL ON THIS LINE
+
+      String query = "INSERT INTO USER_INFO (UserName, PassWord, Role, Name, Phone, Address) VALUES (?, ?, ?, ?, ?, ?)";
+      PreparedStatement myStmt = dbConnect.prepareStatement(query);
+
+      myStmt.setString(1, userName);
+      myStmt.setString(2, passWord);
+      myStmt.setString(3, userRole);
+      myStmt.setString(4, realName);
+      myStmt.setString(5, phoneNumber);
+      myStmt.setString(6, address);
+      myStmt.execute();
+      myStmt.close();
+    } catch (SQLException ex) {
+      ex.printStackTrace();
     }
+  }
 
-    public void insertNewFlight(
+  public void insertNewFlight(
       String flightID, String flightDestination, String flightDepartureDate,
       String flightDepartureTime, String flightDuration, String arrivalTime,
       String airline, String flightPrice) {
 
-        try {
-          // INFO VALIDATION CALL ON THIS LINE
+    try {
+      // INFO VALIDATION CALL ON THIS LINE
 
-          String query = "INSERT INTO FLIGHT_LISTINGS (FlightID, Destination, DepartureDate, DepartureTime, Duration, ArrivalTime, Airline, Price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-          PreparedStatement myStmt = dbConnect.prepareStatement(query);
-          
-          myStmt.setString(1, flightID);
-          myStmt.setString(2, flightDestination);
-          myStmt.setString(3, flightDepartureDate);
-          myStmt.setString(4, flightDepartureTime);
-          myStmt.setString(5, flightDuration);
-          myStmt.setString(6, arrivalTime);
-          myStmt.setString(1, airline);
-          myStmt.setString(1, flightPrice);
-        } catch(SQLException ex) {
-          ex.printStackTrace();
-        }
+      String query = "INSERT INTO FLIGHT_LISTINGS (FlightID, Destination, DepartureDate, DepartureTime, Duration, ArrivalTime, Airline, Price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+      PreparedStatement myStmt = dbConnect.prepareStatement(query);
+
+      myStmt.setString(1, flightID);
+      myStmt.setString(2, flightDestination);
+      myStmt.setString(3, flightDepartureDate);
+      myStmt.setString(4, flightDepartureTime);
+      myStmt.setString(5, flightDuration);
+      myStmt.setString(6, arrivalTime);
+      myStmt.setString(7, airline);
+      myStmt.setString(8, flightPrice);
+
+      myStmt.executeUpdate();
+      myStmt.close();
+    } catch (SQLException ex) {
+      ex.printStackTrace();
     }
+  }
 
 }
