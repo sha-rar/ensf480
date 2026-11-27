@@ -1,2 +1,6 @@
+# Java compiled files
 *.class
-out/
+
+# Temporary local test programs
+/src/TestAllPanels.java
+/src/TestPaymentPanel.java
