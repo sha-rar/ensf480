@@ -1,2 +1,6 @@
-# local history
-.history/
+# Java compiled files
+*.class
+
+# Temporary local test programs
+/src/TestAllPanels.java
+/src/TestPaymentPanel.java
