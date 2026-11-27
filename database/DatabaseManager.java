@@ -22,7 +22,7 @@ public final class DatabaseManager {
     this.PASSWORD = "password";
   }
 
-  public static DatabaseManager getInstance(String url, String user, String pw) {
+  public static DatabaseManager getInstance() {
     if (onlyInstance == null) {
       onlyInstance = new DatabaseManager();
     }
@@ -100,7 +100,7 @@ public final class DatabaseManager {
 
     try {
       Statement myStmt = dbConnect.createStatement();
-      results = myStmt.executeQuery("SELECT * FROM USER_INFO");
+      results = myStmt.executeQuery("SELECT * FROM FLIGHT_LISTINGS");
 
       while (results.next()) {
         String flightID = results.getString("FlightID");
@@ -128,5 +128,24 @@ public final class DatabaseManager {
     }
     return info;
   }
+
+  public void insertNewUser(
+    String userName, String passWord, String userRole, 
+    String realName, String phoneNumber, String address) {
+      
+      try {
+        // INFO VALIDATION THIS LINE
+
+        String query = "INSERT INTO USER_INFO (UserName, PassWord, Role, Name, Phone, Address) VALUES (?, ?, ?, ?, ?, ?)";
+        PreparedStatement myStmt = dbConnect.prepareStatement(query);
+        
+        myStmt.setString(1, userName);
+        myStmt.setString(2, passWord);
+        myStmt.setString(3, userName);
+        myStmt.setString(1, userName);
+        myStmt.setString(1, userName);
+        myStmt.setString(1, userName);
+      }
+    }
 
 }
