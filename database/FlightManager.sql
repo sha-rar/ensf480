@@ -14,20 +14,24 @@ VALUES
 ('Administrator'),
 ('Guest');
 
-DROP TABLE IF EXISTS USER_CREDENTIALS;
+-- INCLUDES EXTRA USER INFO
+DROP TABLE IF EXISTS USER_INFO;
 CREATE TABLE USER_CREDENTIALS (
   UserName      varchar(30) not null,
   PassWord      varchar(60) not null,     -- ideally stored as hash, real password never stored anywhere; not necessary for this demo
   Role          varchar(30) not null,
+  Name          varchar(30) not null,
+  Phone         char(12),
+  Address       varchar(25),
   primary key (UserName),
   foreign key (Role) references USER_ROLES(RName)
 );
 
-INSERT INTO USER_CREDENTIALS (UserName, PassWord, Role)
+INSERT INTO USER_INFO (UserName, PassWord, Role, Name, Phone, Address)
 VALUES
-('John316', 'VerryBerry@32', 'Member'),
-('ironMaiden', 'fearoftheDARK99', 'Member'),
-('MalcolmToddHobert', 'YouOweMe24''', 'Administrator');
+('John316', 'VerryBerry@32', 'Member', 'John Doe', '909-293-4486', '28 Grove St. LA'),
+('ironMaiden', 'fearoftheDARK99', 'Member', 'Bruce Dickinson', '909-495-6664', '486 Rolling Gr. LN'),
+('MalcolmToddHobert', 'YouOweMe24''', 'Administrator', 'Malcolm Todd', '212-800-1856', '800 Lones Way LA');
 
 DROP TABLE IF EXISTS FLIGHT_LISTINGS;
 CREATE TABLE FLIGHT_LISTINGS (
@@ -36,8 +40,8 @@ CREATE TABLE FLIGHT_LISTINGS (
   Destination     varchar(30) not null,    -- 'City PR'; City PRovince/STate; province/state always last two letters
   DepartureDate   DATE not null,    -- YYYY-MM-DD
   DepartureTime   TIME not null,    -- HH:MM:SS; 24 hour clock
-  Duration        TIME not null,    -- HH:MM:SS
-  ArrivalTime     TIME not null,    -- HH:MM:SS; local destination time
+  Duration        TIME,    -- HH:MM:SS
+  ArrivalTime     TIME,    -- HH:MM:SS; local destination time
   Airline         varchar(30) not null,   -- ie. WestJet
   Price           DECIMAL(10, 2) not null check (Price >= 0),  -- CAD
   primary key (FlightID)
