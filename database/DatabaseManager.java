@@ -19,7 +19,7 @@ public final class DatabaseManager {
 
     this.DBURL = "jdbc:mysql://localhost:3306/FLIGHTMANAGER";
     this.USERNAME = "root";
-    this.PASSWORD = "password";
+    this.PASSWORD = "240670";
   }
 
   public static DatabaseManager getInstance() {
